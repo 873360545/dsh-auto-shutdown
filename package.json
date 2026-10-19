@@ -1,0 +1,57 @@
+{
+  "name": "@873360545/dsh-auto-shutdown",
+  "version": "0.3.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "description": "Windows-only DSH plugin: a switch in Settings \u2192 General that shuts the computer down when the current conversation finishes, with a native countdown dialog that cancels the shutdown in one click.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "shutdown",
+    "windows",
+    "automation"
+  ],
+  "license": "MIT",
+  "author": "873360545",
+  "homepage": "https://github.com/873360545/dsh-auto-shutdown#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/873360545/dsh-auto-shutdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/873360545/dsh-auto-shutdown/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/popup.js",
+    "lib/client.js",
+    "assets/notify.ps1",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+- insert:
+    - id: auto-shutdown
+      name: '@873360545/dsh-auto-shutdown'

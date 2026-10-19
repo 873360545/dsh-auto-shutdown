@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Auto Shutdown",
+    "description": "Adds a General settings switch that shuts down this computer after the next conversation finishes."
+  }
+}
